@@ -1,17 +1,16 @@
-<!-- ====== Navbar Section Start -->
 <header x-data="
-{
-  navbarOpen: false,
-}
-" :class="scrolledFromTop ? 'fixed z-50 bg-blue dark:bg-dark bg-opacity-80 shadow-sm backdrop-blur-sm' : 'absolute' "
-       class="top-0 left-0 z-50 w-full absolute bg-white dark:bg-gray-800 shadow-lg backdrop-blur-lg">
+        {
+          navbarOpen: false,
+        }
+      "
+       :class="scrolledFromTop ? 'fixed z-50 bg-white dark:bg-dark bg-opacity-80 shadow-sm backdrop-blur-sm' : 'absolute' "
+       class="top-0 left-0 z-50 w-full absolute">
        <div class="container mx-auto">
               <div class="relative flex items-center justify-between -mx-4">
                      <div class="max-w-full px-4 w-60">
                             <a href="javascript:void(0)" class="block w-full py-5">
-                                   <img src="/src/assets/logo.jpgz" alt="logo1" class="w-40">
-
-                                   <img src="src/assets/images/logo/logo-white.svg" alt="logo2"
+                                   <img src="src/assets/images/logo/logo.svg" alt="logo" class="w-full dark:hidden">
+                                   <img src="src/assets/images/logo/logo-white.svg" alt="logo"
                                           class="hidden w-full dark:block">
                             </a>
                      </div>
@@ -32,31 +31,19 @@
                                                  <li>
                                                         <a href="javascript:void(0)"
                                                                class="flex py-2 text-base font-medium text-dark dark:text-white hover:text-primary lg:ml-12 lg:inline-flex">
-                                                               Accueil
+                                                               Home
                                                         </a>
                                                  </li>
                                                  <li>
                                                         <a href="javascript:void(0)"
                                                                class="flex py-2 text-base font-medium text-dark dark:text-white hover:text-primary lg:ml-12 lg:inline-flex">
-                                                               Services
+                                                               Payment
                                                         </a>
                                                  </li>
                                                  <li>
                                                         <a href="javascript:void(0)"
                                                                class="flex py-2 text-base font-medium text-dark dark:text-white hover:text-primary lg:ml-12 lg:inline-flex">
-                                                               Equipe
-                                                        </a>
-                                                 </li>
-                                                 <li>
-                                                        <a href="javascript:void(0)"
-                                                               class="flex py-2 text-base font-medium text-dark dark:text-white hover:text-primary lg:ml-12 lg:inline-flex">
-                                                               Nos prix
-                                                        </a>
-                                                 </li>
-                                                 <li>
-                                                        <a href="javascript:void(0)"
-                                                               class="flex py-2 text-base font-medium text-dark dark:text-white hover:text-primary lg:ml-12 lg:inline-flex">
-                                                               Contact
+                                                               Features
                                                         </a>
                                                  </li>
                                           </ul>
@@ -65,15 +52,14 @@
                             <div class="justify-end hidden pr-16 sm:flex lg:pr-0">
                                    <a href="javascript:void(0)"
                                           class="py-3 text-base font-medium px-7 text-dark dark:text-white hover:text-primary">
-                                          Se connecter
+                                          Login
                                    </a>
                                    <a href="javascript:void(0)"
-                                          class="py-3 text-base font-medium text-black rounded-lg bg-primary px-7 hover:bg-opacity-90">
-                                          S'inscrire
+                                          class="py-3 text-base font-medium text-white rounded-lg bg-primary px-7 hover:bg-opacity-90">
+                                          Sign Up
                                    </a>
                             </div>
                      </div>
               </div>
        </div>
 </header>
-<!-- ====== Navbar Section End -->
