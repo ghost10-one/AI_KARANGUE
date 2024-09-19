@@ -1,65 +1,105 @@
-<header x-data="
-        {
-          navbarOpen: false,
-        }
-      "
-       :class="scrolledFromTop ? 'fixed z-50 bg-white dark:bg-dark bg-opacity-80 shadow-sm backdrop-blur-sm' : 'absolute' "
-       class="top-0 left-0 z-50 w-full absolute">
-       <div class="container mx-auto">
-              <div class="relative flex items-center justify-between -mx-4">
-                     <div class="max-w-full px-4 w-60">
-                            <a href="javascript:void(0)" class="block w-full py-5">
-                                   <img src="src/assets/images/logo/logo.svg" alt="logo" class="w-full dark:hidden">
-                                   <img src="src/assets/images/logo/logo-white.svg" alt="logo"
-                                          class="hidden w-full dark:block">
-                            </a>
-                     </div>
-                     <div class="flex items-center justify-between w-full px-4">
-                            <div>
-                                   <button class="navbarOpen &amp;&amp; 'navbarTogglerActive'" id="navbarToggler"
-                                          class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden">
-                                          <span
-                                                 class="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
-                                          <span
-                                                 class="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
-                                          <span
-                                                 class="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
-                                   </button>
-                                   <nav x-transition="" :class="!navbarOpen &amp;&amp; 'hidden'" id="navbarCollapse"
-                                          class="absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 px-6 shadow transition-all lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:shadow-none dark:bg-dark-2 lg:dark:bg-transparent hidden">
-                                          <ul class="block lg:flex">
-                                                 <li>
-                                                        <a href="javascript:void(0)"
-                                                               class="flex py-2 text-base font-medium text-dark dark:text-white hover:text-primary lg:ml-12 lg:inline-flex">
-                                                               Home
-                                                        </a>
-                                                 </li>
-                                                 <li>
-                                                        <a href="javascript:void(0)"
-                                                               class="flex py-2 text-base font-medium text-dark dark:text-white hover:text-primary lg:ml-12 lg:inline-flex">
-                                                               Payment
-                                                        </a>
-                                                 </li>
-                                                 <li>
-                                                        <a href="javascript:void(0)"
-                                                               class="flex py-2 text-base font-medium text-dark dark:text-white hover:text-primary lg:ml-12 lg:inline-flex">
-                                                               Features
-                                                        </a>
-                                                 </li>
-                                          </ul>
-                                   </nav>
+<div x-data="{
+       plans: [
+           {
+               name: 'Basic plan',
+               desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+               price: 12,
+               isMostPop: false,
+               features: [
+                   'Curabitur faucibus',
+                   'massa ut pretium maximus',
+                   'Sed posuere nisi',
+                   'Pellentesque eu nibh et neque',
+                   'Suspendisse a leo',
+                   'Praesent quis venenatis ipsum',
+                   'Duis non diam vel tortor',
+               ],
+           },
+           {
+               name: 'Startup',
+               desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+               price: 35,
+               isMostPop: true,
+               features: [
+                   'Curabitur faucibus',
+                   'massa ut pretium maximus',
+                   'Sed posuere nisi',
+                   'Pellentesque eu nibh et neque',
+                   'Suspendisse a leo',
+                   'Praesent quis venenatis ipsum',
+                   'Duis non diam vel tortor',
+               ],
+           },
+           {
+               name: 'Enterprise',
+               desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+               price: 60,
+               isMostPop: false,
+               features: [
+                   'Curabitur faucibus',
+                   'massa ut pretium maximus',
+                   'Sed posuere nisi',
+                   'Pellentesque eu nibh et neque',
+                   'Suspendisse a leo',
+                   'Praesent quis venenatis ipsum',
+                   'Duis non diam vel tortor',
+               ],
+           },
+       ]
+   }">
+       <section class='py-14'>
+              <div class="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
+                     <div class='relative max-w-xl mx-auto sm:text-center'>
+                            <h3 class='text-gray-800 text-3xl font-semibold sm:text-4xl'>
+                                   Pricing for all sizes
+                            </h3>
+                            <div class='mt-3 max-w-xl'>
+                                   <p>
+                                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur
+                                          consequat nunc.
+                                   </p>
                             </div>
-                            <div class="justify-end hidden pr-16 sm:flex lg:pr-0">
-                                   <a href="javascript:void(0)"
-                                          class="py-3 text-base font-medium px-7 text-dark dark:text-white hover:text-primary">
-                                          Login
-                                   </a>
-                                   <a href="javascript:void(0)"
-                                          class="py-3 text-base font-medium text-white rounded-lg bg-primary px-7 hover:bg-opacity-90">
-                                          Sign Up
-                                   </a>
+                     </div>
+                     <div class='mt-16 justify-center gap-6 sm:grid sm:grid-cols-2 sm:space-y-0 lg:grid-cols-3'>
+                            <div x-for="(plan, planIndex) in plans" :key="planIndex">
+                                   <div
+                                          :class="{'relative flex-1 flex items-stretch flex-col rounded-xl border-2 mt-6 sm:mt-0': true, 'mt-10': plan.isMostPop}">
+                                          <div x-show="plan.isMostPop"
+                                                 class="w-32 absolute -top-5 left-0 right-0 mx-auto px-3 py-2 rounded-full border shadow-md bg-white text-center text-gray-700 text-sm font-semibold">
+                                                 Most popular</div>
+                                          <div class="p-8 space-y-4 border-b">
+                                                 <span class='text-indigo-600 font-medium' x-text="plan.name"></span>
+                                                 <div class='text-gray-800 text-3xl font-semibold'>
+                                                        <span x-text="`$${plan.price}`"></span> <span
+                                                               class="text-xl text-gray-600 font-normal">/mo</span>
+                                                 </div>
+                                                 <p x-text="plan.desc"></p>
+                                                 <button
+                                                        class='px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700'>
+                                                        Get Started
+                                                 </button>
+                                          </div>
+                                          <ul class='p-8 space-y-3'>
+                                                 <li class="pb-2 text-gray-800 font-medium">
+                                                        <p>Features</p>
+                                                 </li>
+                                                 <div x-for="(feature, featureIndex) in plan.features"
+                                                        :key="featureIndex">
+                                                        <li class='flex items-center gap-5'>
+                                                               <svg xmlns='http://www.w3.org/2000/svg'
+                                                                      class='h-5 w-5 text-indigo-600'
+                                                                      viewBox='0 0 20 20' fill='currentColor'>
+                                                                      <path fill-rule='evenodd'
+                                                                             d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
+                                                                             clip-rule='evenodd'></path>
+                                                               </svg>
+                                                               <span x-text="feature"></span>
+                                                        </li>
+                                                 </div>
+                                          </ul>
+                                   </div>
                             </div>
                      </div>
               </div>
-       </div>
-</header>
+       </section>
+</div>
