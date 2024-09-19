@@ -6,6 +6,10 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PriceComponent } from './price/price.component';
 import { EroSectionComponent } from './ero-section/ero-section.component';
+import { FooterComponent } from './footer/footer.component';
+import { InfoComponent } from './info/info.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { TestimonialComponent } from './testimonial/testimonial.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +17,11 @@ import { EroSectionComponent } from './ero-section/ero-section.component';
     HeaderComponent,
     NavbarComponent,
     PriceComponent,
-    EroSectionComponent
+    EroSectionComponent,
+    FooterComponent,
+    InfoComponent,
+    CarouselComponent,
+    TestimonialComponent
   ],
   imports: [
     BrowserModule,
