@@ -1,1 +1,118 @@
-<p>header works!</p>
+<div>
+       <nav x-data="{ isOpen: false }"
+              class="relative items-center pt-5 -mb-10 px-4 mx-auto max-w-screen-xl sm:px-8 md:flex md:space-x-6"
+              data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+              <div class="flex justify-between">
+                     <a href="#">
+                            <img src="assets/img2.jpg" width="120" height="50" alt="Float UI logo" />
+                     </a>
+                     <button class="text-gray-500 outline-none md:hidden">
+                            <div x-if="isOpen">
+                                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                          viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                 d="M6 18L18 6M6 6l12 12" />
+                                   </svg>
+                            </div>
+                            <div x-if="!isOpen">
+                                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                          viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                 d="M4 6h16M4 12h16M4 18h16" />
+                                   </svg>
+                            </div>
+                     </button>
+              </div>
+              <ul :class="isOpen ? 'absolute inset-x-0 px-4 border-b bg-white md:border-none md:static' : 'hidden'"
+                     class="flex-1 justify-between mt-12 md:text-sm md:font-medium md:flex md:mt-0">
+                     <div class="items-center text-lg space-y-5 md:flex md:space-x-6 md:space-y-0 md:ml-12">
+                            <li class="text-gray-500 hover:text-indigo-600">
+                                   <a href="javascript:void(0)">Accueil</a>
+                            </li>
+                            <li class="text-gray-500 hover:text-indigo-600">
+                                   <a href="javascript:void(0)">Services</a>
+                            </li>
+                            <li class="text-gray-500 hover:text-indigo-600">
+                                   <a href="javascript:void(0)">Equipe</a>
+                            </li>
+                            <li class="text-gray-500 hover:text-indigo-600">
+                                   <a href="javascript:void(0)">A propos</a>
+                            </li>
+                            <li class="text-gray-500 hover:text-indigo-600">
+                                   <a href="javascript:void(0)">Contact</a>
+                            </li>
+                     </div>
+                     <li class="order-2 py-5 md:py-0">
+                            <a href="javascript:void(0)"
+                                   class="py-2 px-5 rounded-lg m-2 font-medium text-white text-center bg-black hover:bg-indigo-500 active:bg-indigo-700 duration-150 block md:py-3 md:inline">
+                                   S'identifier
+                            </a>
+
+                            <a href="javascript:void(0)"
+                                   class="py-2 px-5 rounded-lg m-2 font-medium text-white text-center bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 duration-150 block md:py-3 md:inline">
+                                   S'inscrire
+                            </a>
+                     </li>
+              </ul>
+       </nav>
+       <section class="py-28">
+              <div class="max-w-screen-xl mx-auto text-gray-600 gap-x-12 items-center justify-between overflow-hidden md:flex md:px-8"
+                     data-aos="fade-up" data-aos-duration="2000">
+                     <div class="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
+
+                            <h2 class="text-4xl text-gray-800 font-extrabold md:text-5xl">
+                                   Sen <span class="text-blue-800">Karangue</span> , <br> Sunu <span
+                                          class="text-blue-800">Yitte</span>
+                            </h2>
+                            <p data-aos="fade-up-right">
+                                   Le projet AI Karangue révolutionne la sécurité des transports urbains au Sénégal en
+                                   intégrant l'intelligence artificielle pour anticiper et prévenir les accidents. Grâce
+                                   à des systèmes de détection en temps réel et à l’analyse prédictive des comportements
+                                   routiers.
+                            </p>
+                            <div class="items-center  gap-x-3 space-y-3 sm:flex sm:space-y-0">
+                                   <a href="javascript:void(0)"
+                                          class="block py-2 px-4 text-center text-white font-medium bg-indigo-600 duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none">
+                                          Accueil
+                                   </a>
+                                   <a href="javascript:void(0)"
+                                          class="flex items-center justify-center gap-x-2 py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border rounded-lg md:inline-flex">Obtenir
+
+                                          l'acces<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                 fill="currentColor" class="w-5 h-5">
+                                                 <path fill-rule="evenodd"
+                                                        d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z"
+                                                        clip-rule="evenodd"></path>
+                                          </svg>
+                                   </a>
+                            </div>
+                     </div>
+                     <div class="flex-none  mt-14 md:mt-0 md:max-w-xl">
+                            <img src="assets/karangue.jpg" alt="equipe" />
+                     </div>
+              </div>
+              <div class="mt-14 px-4 md:px-8 bg-slate-50 py-10" data-aos="fade-up" data-aos-duration="3000">
+                     <p class="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center ">
+                            Partenaires stratégiques d'AI Karangue
+                     </p>
+
+                     <div class="text-center mt-10 text-sm text-gray-500 ">
+                            Les partenaires stratégiques d'AI Karangue jouent un rôle clé dans le développement et la
+                            mise en œuvre du projet. Ces collaborations incluent des acteurs des secteurs publics et
+                            privés, tels que des entreprises de technologie, des institutions de recherche, des agences
+                            gouvernementales et des organisations de transport. Ensemble, ils fournissent les ressources
+                            techniques, financières et logistiques nécessaires pour intégrer des solutions
+                            d'intelligence artificielle dans les systèmes de transport urbain au Sénégal
+                     </div>
+                     <div class="flex justify-center  items-center flex-wrap gap-x-12 gap-y-6 mt-6" data-aos="fade-up"
+                            data-aos-duration="3000">
+                            <img src="assets/govathon.jpg">
+                            <!-- <img src="assets/.jpg"> -->
+                            <img class="w-60 h-48" src="assets/miitoriginal.png">
+                            <img class="w-40 h-48" src="assets/mitoriginal.png">
+                            <img class="w-42 h-48" src="assets/agriculture.png">
+
+                     </div>
+              </div>
+       </section>
+</div>
